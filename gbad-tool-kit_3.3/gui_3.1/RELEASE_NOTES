@@ -1,0 +1,20 @@
+GBAD-GUI RELEASE NOTES
+ 
+NOTE:  The GBAD GUI creates a file called ~.GBAD/GUI.properties, which is used
+       to allow the user to specify what version of the GBAD executables and
+       GraphViz executables they want to use.  The first time the GBAD GUI
+       executes it creates this file, along with several java settings,
+       including the java run-time environment. The GUI.properties file should
+       NOT be copied between machines, as the java settings are specific to
+       the machine.  If the O/S is upgraded/changed, java versions are
+       changed, etc., the user should delete their GUI.properties file and let
+       the GBAD GUI regenerate it for the current environment.
+
+Version 3.1
+ 
+- Allows -noOpt option to be configured from GUI.
+ 
+Version 3.0
+ 
+- Allowed both GBAD-MDL and GBAD-FSM to be run from the GUI.
+- Changed input file format.

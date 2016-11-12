@@ -1,0 +1,70 @@
+========
+gbad-fsm
+========
+
+gbad-fsm was created from the gaston frequent subgraph mining tool 
+(http://www.liacs.nl/~snijssen/gaston/).
+
+gbad-fsm can be run in two separate phases, or all at once.
+
+
+RUNNING PHASE I.
+Phase I is for the discovery of the best substructure and all of its instances.  
+
+For example, the following command:
+
+        gbad-fsm [-mst <threshold>] [-graph <graph input file>] [-phase 1]
+   
+        with options:    -subInstOut <output>  (output the substructure instances (NOTE: This file can get
+                          very large!))
+                         -bestSubInstOut  (write the best substructure instances to the best_sub.inst file)
+                         -phase <number>  (run phase 1 or 2 separately)
+
+results in the following two files being created:
+
+        best_sub.gbad, which consists of the best substructure
+        best_sub.inst (if -bestSubInstOut option is specified), which consists of all instances of the best substructure
+
+The value specified for -mst is the minimum support threshold.  Which 
+means that the substructure shown in best_sub.g is a subgraph that is 
+included in at least <threshold> transactions (or "t"s in the graph input file).
+
+
+RUNNING PHASE II.
+Phase II is for the discovery of the anomalies.
+
+For example, once there are best_sub.g and best_sub.inst files, the following
+command:
+
+        gbad-fsm [<gbad algorithm> <gbad threshold>] [-mst <threshold>] [-graph <graph input file>] [-phase 2]
+
+will run the specified <gbad algorithm> on the specified <graph input file>.
+
+Currently, the options for <gbad algorithm> are:
+
+        - mdl  , for the MDL algorithm
+        - mps  , for the MPS algorithm
+        - prob  , for the Prob algorithm
+
+The <gbad threshold> specifies how much change one is willing to accept for
+detection an anomaly.  This is a value between 0.01 and 0.99.
+
+For the MPS algorithm, the -mst <threshold> should be the same as
+what was specified in Phase I.  For the MDL algorithm, this value should be 1.
+The Prob algorithm should not have a <gbad threshold> specified.
+
+
+RUNNING BOTH PHASES.
+The command:
+
+        gbad-fsm [<gbad algorithm> <gbad threshold>] [-mst <minimum support threshold>] [-graph <graph input file>] 
+        
+        with options:    -subInstOut <output>  (output the substructure instances (NOTE: This file can get
+                          very large!))
+                         -bestSubInstOut  (write the best substructure instances to the best_sub.inst file)
+                         -phase <number>  (run phase 1 or 2 separately)
+                         - mdl  , for the MDL algorithm
+                         - mps  , for the MPS algorithm
+                         - prob  , for the Prob algorithm
+        
+will run both phases.
