@@ -1,6 +1,5 @@
 import requests
 import json
-import random
 
 class Account:
 	def __init__(self, string):
@@ -104,6 +103,7 @@ while len(accountString) > 10:
 	accountString = accountString[acc.used():]
 
 for id in idList:
-	url = 'http://api.reimaginebanking.com/accounts/{}'.format(id)
-	requests.delete(url)
+	url = 'http://api.reimaginebanking.com/accounts/{}?key={}'.format(id,apiKey)
+	retval = requests.delete(url)
+	print(retval)
 
