@@ -1,6 +1,3 @@
-# This is written for PYTHON 3
-# Don't forget to install requests package
-
 import requests
 import json
 
@@ -87,13 +84,23 @@ while  len(customerString) > 10:
 	idList.append(cust.getID())
 	customerString = customerString[cust.used():]
 
-for id in idList:
-	tempID = id
-	print (tempID);
-	print(customerDict[id].getFirstName())
-	print(customerDict[id].getLastName())
-	print(customerDict[id].getStreetNum())
-	print(customerDict[id].getStreetName())
-	print(customerDict[id].getCity())
-	print(customerDict[id].getState())
-	print(customerDict[id].getZip())
+
+
+for customer in customerDict:
+	custObj = customerDict[customer]
+	url = 'http://api.reimaginebanking.com/customers/{}/accounts?key={}'.format(customer,apiKey)
+	payload = {
+		"type": "Checking",
+		"nickname" : custObj.getFirstName()[0] + custObj.getLastName()[0] + "Checking",
+		"balance" : 10000,
+		"rewards" : 0,
+	}
+	response = requests.post(
+		url,
+		data = json.dumps(payload),
+		headers = {"content-type":"application/json"},
+	)
+	if response.status_code == 201:
+		print("account created")
+	else:
+		print("error : no account coul be created")
