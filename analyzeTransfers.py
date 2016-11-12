@@ -61,3 +61,44 @@ class transaction:
 		return self.payerID
 	def getPayeeID(self):
 		return self.payeeID
+
+
+
+apiKey = '1312ae9bf58b2fd71f6632fa9c23996e'
+
+url = 'http://api.reimaginebanking.com/transfers?key={}'.format(apiKey)
+
+transfers = requests.get(url)
+
+transStringtemp = ""
+
+for string in transfers:
+	transStringtemp = transStringtemp +str(string)[2:]
+	transString = transStringtemp.replace("'","")
+
+transDict = {}
+idList = []
+while len(transString) > 10:
+	trans = transaction(transString)
+	transDict[trans.getID()] = trans
+	idList.append(trans.getID())
+	transString = transString[trans.used():]
+
+
+for id in idList:
+	tempID = id
+	print(tempID)
+	print(transDict[id].getID())
+	print(transDict[id].getMessage())
+	print(transDict[id].getType())
+	print(transDict[id].getTransactionDate())
+	print(transDict[id].getStatus())
+	print(transDict[id].getMedium())
+	print(transDict[id].getPayerID())
+	print(transDict[id].getPayeeID())
+	
+
+
+
+
+

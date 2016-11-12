@@ -71,10 +71,11 @@ url = 'http://api.reimaginebanking.com/customers?key={}'.format(apiKey)
 
 accounts = requests.get(url)
 
-accountString = ""
+accountStringtemp = ""
 
 for string in accounts:
-	accountString = accountString + str(string)[2:]
+	accountStringtemp = accountStringtemp + str(string)[2:]
+	accountString = accountStringtemp.replace("'", "")
 
 accountDict = {}
 idList = []

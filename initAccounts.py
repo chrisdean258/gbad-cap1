@@ -71,10 +71,11 @@ url = 'http://api.reimaginebanking.com/customers?key={}'.format(apiKey)
 
 customers = requests.get(url)
 
-customerString = ""
+customerStringtemp = ""
 
 for string in customers:
-	customerString = customerString + str(string)[2:]
+	customerStringtemp = customerStringtemp + str(string)[2:]
+	customerString = customerStringtemp.replace("'","")
 
 customerDict = {}
 idList = []
@@ -87,7 +88,7 @@ while  len(customerString) > 10:
 
 
 for customer in customerDict:
-	custObj = customerDict[customer]
+	cust = customerDict[customer]
 	url = 'http://api.reimaginebanking.com/customers/{}/accounts?key={}'.format(customer,apiKey)
 	payload = {
 		"type": "Checking",
