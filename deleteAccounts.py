@@ -21,19 +21,19 @@ class Account:
 			elif tempType == "balance":
 				quote = string.find("\"",quote) + 1
 				tempData = string[quote+1:string.find(",",quote+1)]
-				#print(tempType + " " + tempData)
+				print(tempType + " " + tempData)
 				self.setVal(tempType,tempData)
 				continue
 			elif tempType == "rewards":
 				quote = string.find("\"",quote) + 1
 				tempData = string[quote+1:string.find(",",quote+1)]	
 				self.setVal(tempType,tempData)
-				#print(tempType + " " + tempData)
+				print(tempType + " " + tempData)
 				continue
 			quote = string.find("\"",quote) + 1
 			quote = string.find("\"",quote) + 1
 			tempData = string[quote: string.find("\"",quote)]
-			#print(tempType + " " + tempData)
+			print(tempType + " " + tempData)
 			quote = string.find("\"", quote) + 1
 			self.setVal(tempType, tempData)
 		self.quoteRtn = quote
@@ -82,7 +82,7 @@ class Account:
 		return self.customerID
 
 
-apiKey = 'f0ab8427bcac93139bb0775400'
+apiKey = 'fcdf2af0ab8427bcac93139bb0775400'
 
 url = 'http://api.reimaginebanking.com/accounts?key={}'.format(apiKey)
 

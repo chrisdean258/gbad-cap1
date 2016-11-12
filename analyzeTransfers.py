@@ -21,6 +21,7 @@ class Transfer:
 			if tempType == "description":
 				quote = string.find("\"",quote)+1
 		#		quote = string.find("\"",quote)+1
+				tempData = ""
 				print(tempType + " " + tempData)
 				continue
 			elif tempType == "amount":	
@@ -39,20 +40,28 @@ class Transfer:
 
 	def setVal(self,dataType,data):
 		if(dataType == "_id"):
+			print("data set")
 			self.id = data
 		elif(dataType == "message"):
+			print("message set")
 			self.message = data
 		elif(dataType == "type"):
-			self.type = data
+			print("type set")
+			self.Type = data
 		elif(dataType == "transaction_date"):
+			print("transaction dat set")
 			self.transactionDate = data
 		elif(dataType == "status"):
+			print("status set")
 			self.status = data
 		elif(dataType == "medium"):
+			print("medium set")
 			self.medium = data
 		elif(dataType == "payer_id"):
+			print("payer id set")
 			self.payerID = data
 		elif(dataType == "payee_id"):
+			print("payee id set")
 			self.payeeID = data	
 	def used(self):
 		return self.quoteRtn
@@ -174,6 +183,7 @@ while len(accountString) > 10:
 	accountDict[acc.getID()] = acc
 	idList.append(acc.getID())
 	accountString = accountString[acc.used():]
+	print("account id added")
 
 transferID = []
 for ID in idList:
@@ -183,9 +193,14 @@ for ID in idList:
 	for string in transfers:
 		transferStringtemp = transferStringtemp + str(string)[2:]
 		transferString = transferStringtemp.replace("'","")
-	while len(transferString) > 10:
+	print(transferString)
+	while len(transferString) > 30:
 		tran = Transfer(transferString)
 		transferID.append(tran.getID())
 		transferString = transferString[tran.used():]
-		print(tran.getID())
+		print(tran.getID() + "hello world")
+	transferStringtemp = ""
+	transferString = ""
+	transfers = ""
 
+print(str(len(transferID)))
