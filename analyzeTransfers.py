@@ -20,11 +20,14 @@ class Transfer:
 				continue
 			if tempType == "description":
 				quote = string.find("\"",quote)+1
+		#		quote = string.find("\"",quote)+1
+				print(tempType + " " + tempData)
 				continue
 			elif tempType == "amount":	
 				quote = string.find("\"",quote)+1
-				tempData = string[quote+2:string.find(",",quote)]
-#				quote = string.find("\"",quote)+1
+				tempData = string[quote+1:string.find(",",quote)]
+				print(tempType + " " + tempData)
+		#		quote = string.find("\"",quote)+1
 				continue
 			quote = string.find("\"",quote)+1
 			quote = string.find("\"",quote)+1
@@ -152,7 +155,7 @@ class Account:
 
 
 
-apiKey = '1312ae9bf58b2fd71f6632fa9c23996e'
+apiKey = 'fcdf2af0ab8427bcac93139bb0775400'
 
 url = 'http://api.reimaginebanking.com/accounts?key={}'.format(apiKey)
 
@@ -183,5 +186,6 @@ for ID in idList:
 	while len(transferString) > 10:
 		tran = Transfer(transferString)
 		transferID.append(tran.getID())
+		transferString = transferString[tran.used():]
 		print(tran.getID())
 
