@@ -88,7 +88,7 @@ while  len(customerString) > 10:
 
 
 for customer in customerDict:
-	cust = customerDict[customer]
+	custObj = customerDict[customer]
 	url = 'http://api.reimaginebanking.com/customers/{}/accounts?key={}'.format(customer,apiKey)
 	payload = {
 		"type": "Checking",
