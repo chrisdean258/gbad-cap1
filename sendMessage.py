@@ -4,7 +4,7 @@ from twilio.rest import TwilioRestClient
 ACCOUNT_SID = "AC56fa4aee86c0551cf51f9b36cd4f568d"
 AUTH_TOKEN = "0763d7872314d7e5581a8711cb7afda2"
 
-f = open('fraudFile', 'r')
+f = open('fraudFile.txt', 'r')
 info = f.read()
 
 toPhoneNumber = info[0:13]
