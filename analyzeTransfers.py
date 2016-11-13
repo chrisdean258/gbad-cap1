@@ -1,10 +1,12 @@
 import requests
 import json
+import random
 
 class Transfer:
 	def __init__(self,string):
 		quote = 0
 		self.message = ""
+		self.amount = 0
 		self.id = ""
 		self.Type = ""
 		self.transactionDate = ""
@@ -27,6 +29,7 @@ class Transfer:
 			elif tempType == "amount":	
 				quote = string.find("\"",quote)+1
 				tempData = string[quote+1:string.find(",",quote)]
+				self.setVal(tempType,tempData)
 				print(tempType + " " + tempData)
 		#		quote = string.find("\"",quote)+1
 				continue
@@ -63,6 +66,8 @@ class Transfer:
 		elif(dataType == "payee_id"):
 			print("payee id set")
 			self.payeeID = data	
+		elif(dataType == "amount"):
+			self.amount = data
 	def used(self):
 		return self.quoteRtn
 	def getID(self):
@@ -81,6 +86,8 @@ class Transfer:
 		return self.payerID
 	def getPayeeID(self):
 		return self.payeeID
+	def getAmount(self):
+		return self.amount
 
 class Account:
 	def __init__(self, string):
@@ -180,12 +187,13 @@ accountDict = {}
 idList = []
 while len(accountString) > 10:
 	acc = Account(accountString)
-	accountDict[acc.getID()] = acc
+	accountDict[acc.getID()] = len(idList)
 	idList.append(acc.getID())
 	accountString = accountString[acc.used():]
 	print("account id added")
 
 transferID = []
+transferDict = {}
 for ID in idList:
 	url2 = 'http://api.reimaginebanking.com/accounts/{}/transfers?type=payer&key={}'.format(ID,apiKey)
 	transfers = requests.get(url2)
@@ -197,10 +205,28 @@ for ID in idList:
 	while len(transferString) > 30:
 		tran = Transfer(transferString)
 		transferID.append(tran.getID())
+		transferDict[tran.getID()] = tran
 		transferString = transferString[tran.used():]
-		print(tran.getID() + "hello world")
 	transferStringtemp = ""
 	transferString = ""
 	transfers = ""
 
-print(str(len(transferID)))
+outfile = open("gbadinput.g","w")
+
+for i in range(20):
+	outfile.write("XP #" + str(i+1) + "\n")
+	j = 1
+	for ID in idList:
+		outfile.write("v " + str(j) + " \"" + ID + "\"" + "\n")
+		j += 1
+	for k in range(len(idList)-1):
+		outfile.write("e " + str(k+1) + " " + str(accountDict[transferDict[transferID[(k*(len(idList)-1)+i)%len(transferID)]].getPayeeID()]+1) + " ")
+		tempVal = transferDict[transferID[(k*(len(idList)-1) + i)%len(transferID)]].getAmount();
+		if str(tempVal) == "100":
+			outfile.write("\"low\"\n")
+		elif str(tempVal) == "500":
+			outfile.write("\"high\"\n")
+		else:
+			outfile.write("\"normal\"\n")
+outfile.write("e 20 " + str(random.randint(1,19)) + " " +random.choice(["high","low","normal"]) + "\n")
+outfile.close()
