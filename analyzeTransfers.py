@@ -36,7 +36,7 @@ class Transfer:
 			quote = string.find("\"",quote)+1
 			quote = string.find("\"",quote)+1
 			tempData = string[quote:string.find("\"",quote)]
-			print(tempType + " " + tempData)
+			#print(tempType + " " + tempData)
 			quote = string.find("\"",quote)+1
 			self.setVal(tempType,tempData)
 		self.quoteRtn = quote
@@ -49,7 +49,7 @@ class Transfer:
 	#		print("message set")
 			self.message = data
 		elif(dataType == "type"):
-			print("type set")
+	#		print("type set")
 			self.Type = data
 		elif(dataType == "transaction_date"):
 	#		print("transaction dat set")
@@ -169,7 +169,7 @@ class Account:
 	def getCustomerID(self):
 		return self.customerID
 
-
+print("Analyzing Transfers\n")
 
 apiKey = 'fcdf2af0ab8427bcac93139bb0775400'
 
@@ -228,5 +228,5 @@ for i in range(20):
 			outfile.write("\"high\"\n")
 		else:
 			outfile.write("\"normal\"\n")
-outfile.write("e 20 " + str(random.randint(1,19)) + " " +random.choice(["high","low","normal"]) + "\n")
+outfile.write("e 20 " + str(random.randint(1,19)) + " " +random.choice(["\"high\"","\"low\"","\"normal\""]) + "\n")
 outfile.close()

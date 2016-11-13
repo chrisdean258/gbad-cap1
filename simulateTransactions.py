@@ -82,6 +82,7 @@ class Account:
 	def getCustomerID(self):
 		return self.customerID
 
+print("Simulating transactions\n")
 
 apiKey = 'fcdf2af0ab8427bcac93139bb0775400'
 

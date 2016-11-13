@@ -63,7 +63,7 @@ class Customer:
 	def getZip(self):
 		return self.zip
 
-
+print("Initializing Account Data\n")
 
 apiKey = 'fcdf2af0ab8427bcac93139bb0775400'
 
@@ -86,7 +86,7 @@ while  len(customerString) > 10:
 	customerString = customerString[cust.used():]
 
 # Create a file to store all the names and IDs
-file = open('nameID.txt', 'w')
+f = open('nameID.txt', 'w')
 
 for customer in customerDict:
 	custObj = customerDict[customer]
@@ -104,7 +104,7 @@ for customer in customerDict:
 	)
 	if response.status_code == 201:
 	#	print("account created")
-		file.write(customerDict[customer].getFirstName() + " " + customerDict[customer].getLastName() + " " + customer)
-	else:
+		f.write(customerDict[customer].getFirstName() + " " + customerDict[customer].getLastName() + " " + customer + "\n")
+	
 	#	print("error : no account coul be created")
-file.close
+f.close()

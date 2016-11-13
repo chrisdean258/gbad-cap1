@@ -1,6 +1,8 @@
 import requests
 import json
 
+print("Initializing Customers\n")
+
 apiKey = "fcdf2af0ab8427bcac93139bb0775400"
 
 url = 'http://api.reimaginebanking.com/customers?key={}'.format(apiKey)

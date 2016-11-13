@@ -1,1 +1,148 @@
-+13179418233-YOU READ THE CODE
+GBAD 3.3
+
+Parameters:
+  Input file..................... gbadinput.g
+  Predefined substructure file... none
+  Output file.................... none
+  Dot file....................... none
+  Beam width..................... 4
+  Compress....................... false
+  Evaluation method.............. MDL
+  Anomaly Detection method....... Information Theoretic
+  Information Theoretic threshold 0.350000
+  Max Anomalous Score............ MAX
+  Normative Pattern.............. 1
+  'e' edges directed............. true
+  Iterations..................... 1
+  Limit.......................... 190
+  Minimum size of substructures.. 1
+  Maximum size of substructures.. 400
+  Number of best substructures... 3
+  Output level................... 2
+  Allow overlapping instances.... false
+  Prune.......................... false
+  Optimized (Anomaly Detection).. true
+  Threshold...................... 0.000000
+  Value-based queue.............. false
+
+Read 20 total positive graphs
+
+20 positive graphs: 400 vertices, 381 edges, 7617 bits
+23 unique labels
+
+20 initial substructures
+Normative Pattern (1):
+Substructure: value = 1.00108, instances = 4
+  Graph(2v,1e):
+    v 1 "582817f0360f81f10454bb39"
+    v 2 "582817f1360f81f10454bb41"
+    d 1 2 "normal"
+
+Anomalous Instance(s):
+
+ from example 4:
+    v 63 "582817f0360f81f10454bb35" <-- anomaly (original vertex: 3 , in original example 4)
+    v 67 "582817f0360f81f10454bb39"
+    d 67 63 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 8:
+    v 147 "582817f0360f81f10454bb39"
+    v 160 "582817f1360f81f10454bb46" <-- anomaly (original vertex: 20 , in original example 8)
+    d 147 160 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 10:
+    v 187 "582817f0360f81f10454bb39"
+    v 199 "582817f1360f81f10454bb45" <-- anomaly (original vertex: 19 , in original example 10)
+    d 187 199 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 12:
+    v 224 "582817f0360f81f10454bb36" <-- anomaly (original vertex: 4 , in original example 12)
+    v 227 "582817f0360f81f10454bb39"
+    d 227 224 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 14:
+    v 267 "582817f0360f81f10454bb39"
+    v 269 "582817f1360f81f10454bb3b" <-- anomaly (original vertex: 9 , in original example 14)
+    d 267 269 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 16:
+    v 307 "582817f0360f81f10454bb39"
+    v 314 "582817f1360f81f10454bb40" <-- anomaly (original vertex: 14 , in original example 16)
+    d 307 314 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 18:
+    v 347 "582817f0360f81f10454bb39"
+    v 357 "582817f1360f81f10454bb43" <-- anomaly (original vertex: 17 , in original example 18)
+    d 347 357 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 2:
+    v 30 "582817f1360f81f10454bb3c" <-- anomaly (original vertex: 10 , in original example 2)
+    v 35 "582817f1360f81f10454bb41"
+    d 30 35 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 8:
+    v 148 "582817f0360f81f10454bb3a" <-- anomaly (original vertex: 8 , in original example 8)
+    v 155 "582817f1360f81f10454bb41"
+    d 148 155 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 13:
+    v 255 "582817f1360f81f10454bb41"
+    v 257 "582817f1360f81f10454bb43" <-- anomaly (original vertex: 17 , in original example 13)
+    d 257 255 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 17:
+    v 334 "582817f1360f81f10454bb40" <-- anomaly (original vertex: 14 , in original example 17)
+    v 335 "582817f1360f81f10454bb41"
+    d 334 335 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 18:
+    v 346 "582817f0360f81f10454bb38" <-- anomaly (original vertex: 6 , in original example 18)
+    v 355 "582817f1360f81f10454bb41"
+    d 346 355 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+Best 3 substructures:
+
+(1) Substructure: value = 1.00108, instances = 4
+  Graph(2v,1e):
+    v 1 "582817f0360f81f10454bb39"
+    v 2 "582817f1360f81f10454bb41"
+    d 1 2 "normal"
+
+(2) Substructure: value = 1.00016, instances = 4
+  Graph(2v,1e):
+    v 1 "582817f1360f81f10454bb3d"
+    v 2 "582817f1360f81f10454bb45"
+    d 1 2 "normal"
+
+(3) Substructure: value = 0.998693, instances = 3
+  Graph(2v,1e):
+    v 1 "582817f0360f81f10454bb37"
+    v 2 "582817f1360f81f10454bb3f"
+    d 1 2 "normal"
+
+
+GBAD done (elapsed CPU time =    0.07 seconds).
