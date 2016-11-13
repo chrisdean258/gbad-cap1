@@ -214,7 +214,7 @@ for ID in idList:
 outfile = open("gbadinput.g","w")
 
 for i in range(20):
-	outfile.write("XP #" + str(i+1) + "\n")
+	outfile.write("XP # " + str(i+1) + "\n")
 	j = 1
 	for ID in idList:
 		outfile.write("v " + str(j) + " \"" + ID + "\"" + "\n")
