@@ -110,7 +110,7 @@ for j in range(20):
 			rand = random.randint(0,len(idList)-1)
 		transfer = 100 * random.randint(1,5)
 		url = 'http://api.reimaginebanking.com/accounts/{}/transfers?key={}'.format(idList[i],apiKey)
-		print(url)
+#		print(url)
 		body = {
 			"medium":"balance",
 			"payee_id":idList[rand],
@@ -135,4 +135,4 @@ retval = requests.post(
 	data = json.dumps(body),
 	headers={'content-type':'application/json'},
 	)
-print (url)	
+#print (url)	

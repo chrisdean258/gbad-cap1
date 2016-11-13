@@ -24,13 +24,13 @@ class Transfer:
 				quote = string.find("\"",quote)+1
 		#		quote = string.find("\"",quote)+1
 				tempData = ""
-				print(tempType + " " + tempData)
+			#	print(tempType + " " + tempData)
 				continue
 			elif tempType == "amount":	
 				quote = string.find("\"",quote)+1
 				tempData = string[quote+1:string.find(",",quote)]
 				self.setVal(tempType,tempData)
-				print(tempType + " " + tempData)
+	#			print(tempType + " " + tempData)
 		#		quote = string.find("\"",quote)+1
 				continue
 			quote = string.find("\"",quote)+1
@@ -43,28 +43,28 @@ class Transfer:
 
 	def setVal(self,dataType,data):
 		if(dataType == "_id"):
-			print("data set")
+	#		print("data set")
 			self.id = data
 		elif(dataType == "message"):
-			print("message set")
+	#		print("message set")
 			self.message = data
 		elif(dataType == "type"):
 			print("type set")
 			self.Type = data
 		elif(dataType == "transaction_date"):
-			print("transaction dat set")
+	#		print("transaction dat set")
 			self.transactionDate = data
 		elif(dataType == "status"):
-			print("status set")
+	#		print("status set")
 			self.status = data
 		elif(dataType == "medium"):
-			print("medium set")
+	#		print("medium set")
 			self.medium = data
 		elif(dataType == "payer_id"):
-			print("payer id set")
+	#		print("payer id set")
 			self.payerID = data
 		elif(dataType == "payee_id"):
-			print("payee id set")
+	#		print("payee id set")
 			self.payeeID = data	
 		elif(dataType == "amount"):
 			self.amount = data
@@ -190,7 +190,7 @@ while len(accountString) > 10:
 	accountDict[acc.getID()] = len(idList)
 	idList.append(acc.getID())
 	accountString = accountString[acc.used():]
-	print("account id added")
+#	print("account id added")
 
 transferID = []
 transferDict = {}
@@ -201,7 +201,7 @@ for ID in idList:
 	for string in transfers:
 		transferStringtemp = transferStringtemp + str(string)[2:]
 		transferString = transferStringtemp.replace("'","")
-	print(transferString)
+#	print(transferString)
 	while len(transferString) > 30:
 		tran = Transfer(transferString)
 		transferID.append(tran.getID())

@@ -25,9 +25,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #2
 customerPayload = {
@@ -50,9 +50,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #3
 customerPayload = {
@@ -75,9 +75,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #4
 customerPayload = {
@@ -100,9 +100,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #5
 customerPayload = {
@@ -125,9 +125,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #6
 customerPayload = {
@@ -150,9 +150,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #7
 customerPayload = {
@@ -175,9 +175,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #8
 customerPayload = {
@@ -200,9 +200,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #9
 customerPayload = {
@@ -225,9 +225,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #10
 customerPayload = {
@@ -250,9 +250,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #11
 customerPayload = {
@@ -275,9 +275,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #12
 customerPayload = {
@@ -300,9 +300,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #13
 customerPayload = {
@@ -325,9 +325,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #14
 customerPayload = {
@@ -350,9 +350,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #15
 customerPayload = {
@@ -375,9 +375,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #16
 customerPayload = {
@@ -400,9 +400,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #17
 customerPayload = {
@@ -425,9 +425,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #18
 customerPayload = {
@@ -450,9 +450,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #19
 customerPayload = {
@@ -475,9 +475,9 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')
 
 #20
 customerPayload = {
@@ -500,6 +500,6 @@ response = requests.post(
 	headers={'content-type':'application/json'},
 	)
 if response.status_code == 201:
-	print('customer created')
+#	print('customer created')
 else:
-	print('customer not created')
+#	print('customer not created')

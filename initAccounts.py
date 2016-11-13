@@ -21,7 +21,7 @@ class Customer:
 			quote = string.find("\"",quote) + 1 	
 			quote = string.find("\"",quote) + 1 	
 			tempData = string[quote: string.find("\"",quote)]
-			print(tempType + " " + tempData)
+	#		print(tempType + " " + tempData)
 			quote = string.find("\"",quote) + 1 	
 			self.setVal(tempType,tempData)
 		self.quoteRtn = quote
@@ -103,8 +103,8 @@ for customer in customerDict:
 		headers = {"content-type":"application/json"},
 	)
 	if response.status_code == 201:
-		print("account created")
+	#	print("account created")
 		file.write(customerDict[customer].getFirstName() + " " + customerDict[customer].getLastName() + " " + customer)
 	else:
-		print("error : no account coul be created")
+	#	print("error : no account coul be created")
 file.close
