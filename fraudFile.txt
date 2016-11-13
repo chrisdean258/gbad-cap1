@@ -1,1 +1,68 @@
-+13179418233-YOU READ THE CODE
+ from example 3:
+    v 45 "5827c451360f81f10454a263"
+    v 48 "5827c451360f81f10454a266" <-- anomaly (original vertex: 6 , in original example 3)
+    d 48 45 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 4:
+    v 66 "5827c451360f81f10454a263"
+    v 82 "5827c452360f81f10454a273" <-- anomaly (original vertex: 19 , in original example 4)
+    d 82 66 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 9:
+    v 171 "5827c451360f81f10454a263"
+    v 176 "5827c451360f81f10454a268" <-- anomaly (original vertex: 8 , in original example 9)
+    d 176 171 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 12:
+    v 234 "5827c451360f81f10454a263"
+    v 248 "5827c451360f81f10454a271" <-- anomaly (original vertex: 17 , in original example 12)
+    d 248 234 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 14:
+    v 274 "5827c433360f81f10454a261" <-- anomaly (original vertex: 1 , in original example 14)
+    v 276 "5827c451360f81f10454a263"
+    d 274 276 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 15:
+    v 297 "5827c451360f81f10454a263"
+    v 314 "5827c452360f81f10454a274" <-- anomaly (original vertex: 20 , in original example 15)
+    d 314 297 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 4:
+    v 77 "5827c451360f81f10454a26e"
+    v 83 "5827c452360f81f10454a274" <-- anomaly (original vertex: 20 , in original example 4)
+    d 77 83 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 10:
+    v 198 "5827c451360f81f10454a269" <-- anomaly (original vertex: 9 , in original example 10)
+    v 203 "5827c451360f81f10454a26e"
+    d 203 198 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 17:
+    v 342 "5827c451360f81f10454a266" <-- anomaly (original vertex: 6 , in original example 17)
+    v 350 "5827c451360f81f10454a26e"
+    d 350 342 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 19:
+    v 392 "5827c451360f81f10454a26e"
+    v 396 "5827c452360f81f10454a272" <-- anomaly (original vertex: 18 , in original example 19)
+    d 392 396 "normal"
+    (information_theoretic anomalous value = 1.000000 )

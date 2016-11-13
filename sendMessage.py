@@ -1,28 +1,46 @@
 from twilio.rest import TwilioRestClient
 
 # My Twilio Credentials
-ACCOUNT_SID = "AC56fa4aee86c0551cf51f9b36cd4f568d"
-AUTH_TOKEN = "0763d7872314d7e5581a8711cb7afda2"
+ACCOUNT_SID = "ACe815d90767f07086bfbe45235d2b2db3"
+AUTH_TOKEN = "708f97c7f375f76e74802c4423664f5d"
 
+client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 # open a file named fraudFile.txt in read mode
-f = open('fraudFile.txt', 'r')
+ff = open('fraudFile.txt', 'r')
+
+names = open('nameID.txt', 'r')
 # read the file into a string info
-info = f.read()
+# info = f.read()
+fromPhoneNumber = "+15005550006"
+toPhoneNumber = "+16155120921"
+message = "HELLO"
+name = ""
 
-# parse the phone number from the info string
-toPhoneNumber = info[0:13]
-# parse the message from the info string
-message = info[13:]
-
-# auto phone number from Twilio to send messages
-fromPhoneNumber = "+13178545402"
+for line in ff:
+    temp = ff.readline();
+    if "v" in temp[0:6]:
+        if "<--" not in temp:
+            id_ = temp[temp.index("\"") + 1:]
+            id_ = id_[0:24]
+            print(id_)
+            for line in names:
+                name = names.readline()
+                print(name)
+                if name[0:25] == id_:
+                    message = name[25:name.index(" ")]
+                    name = name[name.index(" ") + 1]
+                    name = name[name.index(" ") + 1]
+                    message = message + name[0:name.index(" ")]
+                    print(message)
+                    name = name[name.index(" ")]
+#                    toPhoneNumber = "+13179418233"
+            
 
 # access the API client
-client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
 # create and send a client message with the two phone nubmers and the message
-client.messages.create(
-    to = str(toPhoneNumber),
-    from_ = fromPhoneNumber,
-    body = message,
-)
+    client.messages.create(
+        to = toPhoneNumber,
+        from_ = fromPhoneNumber,
+        body = message,
+    )
