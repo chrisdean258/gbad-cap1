@@ -1,0 +1,136 @@
+GBAD 3.3
+
+normalParameters:
+  Input file..................... gbadinput.g
+  Predefined substructure file... none
+  Output file.................... none
+  Dot file....................... none
+  Beam width..................... 4
+  Compress....................... false
+  Evaluation method.............. MDL
+  Anomaly Detection method....... Information Theoretic
+  Information Theoretic threshold 0.335000
+  Max Anomalous Score............ MAX
+  Normative Pattern.............. 1
+  'e' edges directed............. true
+  Iterations..................... 1
+  Limit.......................... 200
+  Minimum size of substructures.. 1
+  Maximum size of substructures.. 420
+  Number of best substructures... 3
+  Output level................... 2
+  Allow overlapping instances.... false
+  Prune.......................... false
+  Optimized (Anomaly Detection).. true
+  Threshold...................... 0.000000
+  Value-based queue.............. false
+
+Read 20 total positive graphs
+
+20 positive graphs: 420 vertices, 400 edges, 8075 bits
+24 unique labels
+
+21 initial substructures
+Normative Pattern (1):
+Substructure: value = 1.0008, instances = 4
+  Graph(2v,1e):
+    v 1 "5827c451360f81f10454a263"
+    v 2 "5827c451360f81f10454a26e"
+    d 2 1 "normal"
+
+Anomalous Instance(s):
+
+ from example 3:
+    v 45 "5827c451360f81f10454a263"
+    v 48 "5827c451360f81f10454a266" <-- anomaly (original vertex: 6 , in original example 3)
+    d 48 45 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 4:
+    v 66 "5827c451360f81f10454a263"
+    v 82 "5827c452360f81f10454a273" <-- anomaly (original vertex: 19 , in original example 4)
+    d 82 66 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 9:
+    v 171 "5827c451360f81f10454a263"
+    v 176 "5827c451360f81f10454a268" <-- anomaly (original vertex: 8 , in original example 9)
+    d 176 171 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 12:
+    v 234 "5827c451360f81f10454a263"
+    v 248 "5827c451360f81f10454a271" <-- anomaly (original vertex: 17 , in original example 12)
+    d 248 234 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 14:
+    v 274 "5827c433360f81f10454a261" <-- anomaly (original vertex: 1 , in original example 14)
+    v 276 "5827c451360f81f10454a263"
+    d 274 276 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 15:
+    v 297 "5827c451360f81f10454a263"
+    v 314 "5827c452360f81f10454a274" <-- anomaly (original vertex: 20 , in original example 15)
+    d 314 297 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 4:
+    v 77 "5827c451360f81f10454a26e"
+    v 83 "5827c452360f81f10454a274" <-- anomaly (original vertex: 20 , in original example 4)
+    d 77 83 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 10:
+    v 198 "5827c451360f81f10454a269" <-- anomaly (original vertex: 9 , in original example 10)
+    v 203 "5827c451360f81f10454a26e"
+    d 203 198 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 17:
+    v 342 "5827c451360f81f10454a266" <-- anomaly (original vertex: 6 , in original example 17)
+    v 350 "5827c451360f81f10454a26e"
+    d 350 342 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+ from example 19:
+    v 392 "5827c451360f81f10454a26e"
+    v 396 "5827c452360f81f10454a272" <-- anomaly (original vertex: 18 , in original example 19)
+    d 392 396 "normal"
+    (information_theoretic anomalous value = 1.000000 )
+
+
+Best 3 substructures:
+
+(1) Substructure: value = 1.0008, instances = 4
+  Graph(2v,1e):
+    v 1 "5827c451360f81f10454a263"
+    v 2 "5827c451360f81f10454a26e"
+    d 2 1 "normal"
+
+(2) Substructure: value = 0.99965, instances = 2
+  Graph(3v,2e):
+    v 1 "5827c433360f81f10454a261"
+    v 2 "5827c451360f81f10454a262"
+    v 3 "5827c451360f81f10454a26a"
+    d 2 3 "normal"
+    d 3 1 "normal"
+
+(3) Substructure: value = 0.998525, instances = 3
+  Graph(2v,1e):
+    v 1 "5827c433360f81f10454a261"
+    v 2 "5827c451360f81f10454a26a"
+    d 2 1 "normal"
+
+
+GBAD done (elapsed CPU time =    0.08 seconds).

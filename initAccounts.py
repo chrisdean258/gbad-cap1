@@ -86,7 +86,7 @@ while  len(customerString) > 10:
 	customerString = customerString[cust.used():]
 
 # Create a file to store all the names and IDs
-file = open('nameID.txt', 'r')
+file = open('nameID.txt', 'w')
 
 for customer in customerDict:
 	custObj = customerDict[customer]
@@ -104,9 +104,7 @@ for customer in customerDict:
 	)
 	if response.status_code == 201:
 		print("account created")
-        file.print(customerDict[customer].getFirstName() + " " +
-        customerDict[customer].getLastName + " " +
-        customerDict[customer].getID()
+		file.write(customerDict[customer].getFirstName() + " " + customerDict[customer].getLastName() + " " + customer)
 	else:
 		print("error : no account coul be created")
 file.close
